@@ -197,7 +197,7 @@ class Instructor extends Lambdasian{
 */
 class Student extends Lambdasian{
    constructor({name, age, location, previousBackground, className, favSubjects}){
-     super({name, age, location, previousBackground, className, favSubjects});
+     super({name, age, location});
      this.previousBackground=previousBackground;
      this.className=className;
      this.favSubjects=favSubjects;
@@ -208,7 +208,7 @@ class Student extends Lambdasian{
    PRAssignment(subject){
     return `${this.name} has submitted a PR for ${subject}`
    }
-   sprintChallenge(){
+   sprintChallenge(subject){
      return `${this.name} has begun sprint challenge on ${subject}`
    }
 }
