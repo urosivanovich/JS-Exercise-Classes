@@ -42,8 +42,45 @@ class Airplane {
 */
 
 class Person {
-  
+  constructor(name, age){
+    this.name= name;
+    this.age=age;
+    this.stomach = [];
+  }
+  eat(edible){
+    if( this.stomach.length < 10 ){
+      this.stomach.push(edible)
+    }
+  };
+  poop(){
+    this.stomach = [];
+  };
+
+  toString(){
+    return `${this.name} and ${this.age}`
+  };
 }
+
+const mary = new Person({
+  name: 'Mary',
+  age: 50, 
+});
+
+mary.eat('🍣')
+mary.eat('burger')
+mary.eat('prsutu')
+mary.eat('sir')
+mary.eat('virsle')
+mary.eat('gibanicu')
+mary.eat('Zeca')
+mary.eat('dva zeca')
+mary.eat('patku')
+
+
+console.log(mary.stomach);
+
+mary.poop;
+console.log(mary.stomach)
 
 /*
   TASK 2
@@ -60,7 +97,26 @@ class Person {
 */
 
 class Car {
-  
+  constructor(model, milesPerGallon){
+  this.model = model;
+  this.milesPerGallon = milesPerGallon;  
+  this.tank = 0;
+  this.odometer = 0;
+  }
+  fill(gallons){
+     this.tank += gallons;
+  }
+  drive(distance){
+    this.odometer += distance;
+    totalDistancePossible = this.tank * this.milesPerGallon;
+    this.tank = this.tank - totalDistancePossible;
+    // totalDistancePossible = this.tank * this.milesPerGallon;
+    if(distance > totalDistancePossible){
+      this.odometer += totalDistancePossible
+      this.tank = 0;
+  } 
+  return `I ran out of fuel at ${this.tank} miles!`
+ }
 }
 
 /*
